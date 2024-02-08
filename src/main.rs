@@ -10,6 +10,7 @@ pub mod min_rotated_array;
 pub mod search_rotated_array;
 pub mod three_sum;
 pub mod max_container;
+pub mod binary_sum;
 
 fn main() {
     println!("Hello, world!");
