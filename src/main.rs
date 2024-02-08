@@ -8,6 +8,7 @@ pub mod max_subarray;
 pub mod max_product;
 pub mod min_rotated_array;
 pub mod search_rotated_array;
+pub mod three_sum;
 
 fn main() {
     println!("Hello, world!");
