@@ -11,6 +11,7 @@ pub mod search_rotated_array;
 pub mod three_sum;
 pub mod max_container;
 pub mod binary_sum;
+pub mod hamming_weight;
 
 fn main() {
     println!("Hello, world!");
