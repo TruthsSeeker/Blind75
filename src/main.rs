@@ -13,6 +13,7 @@ pub mod max_container;
 pub mod binary_sum;
 pub mod hamming_weight;
 pub mod counting_bits;
+pub mod missing_number;
 
 fn main() {
     println!("Hello, world!");
