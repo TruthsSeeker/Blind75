@@ -15,6 +15,7 @@ pub mod hamming_weight;
 pub mod counting_bits;
 pub mod missing_number;
 pub mod reverse_bits;
+pub mod climbing_stairs;
 
 fn main() {
     println!("Hello, world!");
