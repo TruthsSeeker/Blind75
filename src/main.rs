@@ -14,6 +14,7 @@ pub mod binary_sum;
 pub mod hamming_weight;
 pub mod counting_bits;
 pub mod missing_number;
+pub mod reverse_bits;
 
 fn main() {
     println!("Hello, world!");
