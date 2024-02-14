@@ -16,6 +16,7 @@ pub mod counting_bits;
 pub mod missing_number;
 pub mod reverse_bits;
 pub mod climbing_stairs;
+pub mod coin_change;
 
 fn main() {
     println!("Hello, world!");
