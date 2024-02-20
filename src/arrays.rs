@@ -1,0 +1,10 @@
+pub mod array_dupes;
+pub mod buy_sell_stock;
+pub mod max_container;
+pub mod max_product;
+pub mod max_subarray;
+pub mod min_rotated_array;
+pub mod product_not_self;
+pub mod search_rotated_array;
+pub mod two_sum;
+pub mod three_sum;
