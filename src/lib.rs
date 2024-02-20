@@ -1,3 +1,3 @@
-mod arrays;
-mod binary;
-mod dp;
+pub mod arrays;
+pub mod binary;
+pub mod dp;

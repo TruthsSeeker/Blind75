@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 
 pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
-        // let mut memo = HashMap::new();
-        // find_subsequence_memo(text1.as_str(), text2.as_str(), &mut memo)
+        let mut memo = HashMap::new();
+        find_subsequence_memo(text1.as_str(), text2.as_str(), &mut memo);
         find_subsequence_tab(text1, text2)
 }
 
