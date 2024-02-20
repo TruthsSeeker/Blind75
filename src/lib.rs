@@ -1,5 +1,3 @@
-use crate::product_not_self::product_except_self;
-
 pub mod two_sum;
 pub mod buy_sell_stock;
 pub mod array_dupes;
@@ -17,10 +15,5 @@ pub mod missing_number;
 pub mod reverse_bits;
 pub mod climbing_stairs;
 pub mod coin_change;
+pub mod longest_increasing_subsequence;
 
-fn main() {
-    println!("Hello, world!");
-    let test = vec![3,4,5,6];
-    
-    product_except_self(test);
-}
