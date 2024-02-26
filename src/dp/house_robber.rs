@@ -5,6 +5,17 @@ pub fn rob(nums: Vec<i32>) -> i32 {
     rob_memo(&nums, 0, &mut memo)
 }
 
+pub fn rob_opti(nums: Vec<i32>) -> i32 {
+    let (mut rob1, mut rob2) = (0, 0);
+
+    for n in nums {
+        let temp = rob2.max(rob1 + n);
+        rob1 = rob2;
+        rob2 = temp;
+    }
+    rob1.max(rob2)
+}
+
 fn rob_memo(nums: &Vec<i32>, start: usize, memo: &mut HashMap<usize, i32>) -> i32 {
     if nums.len().saturating_sub(start) == 0 {
         return 0;
@@ -31,5 +42,13 @@ mod tests {
         assert_eq!(rob(vec![2, 7, 9, 3, 1]), 12);
         assert_eq!(rob(vec![2, 1, 1, 2]), 4);
         assert_eq!(rob(vec![2]), 2);
+    }
+
+    #[test]
+    fn test_rob_opti() {
+        assert_eq!(rob_opti(vec![1, 2, 3, 1]), 4);
+        assert_eq!(rob_opti(vec![2, 7, 9, 3, 1]), 12);
+        assert_eq!(rob_opti(vec![2, 1, 1, 2]), 4);
+        assert_eq!(rob_opti(vec![2]), 2);
     }
 }
