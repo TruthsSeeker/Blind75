@@ -5,3 +5,4 @@ pub mod longest_common_subsequence;
 pub mod word_break;
 pub mod combination_sum_iv;
 pub mod house_robber;
+pub mod house_robber_2;
