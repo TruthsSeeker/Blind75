@@ -7,4 +7,5 @@ pub mod combination_sum_iv;
 pub mod house_robber;
 pub mod house_robber_2;
 pub mod decode_ways;
-mod unique_paths;
+pub mod unique_paths;
+pub mod jump_game;
