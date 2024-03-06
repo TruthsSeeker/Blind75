@@ -26,8 +26,6 @@ pub fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 
 #[cfg(test)]
 mod tests {
-    use crate::intervals;
-
     use super::*;
 
     #[test]
