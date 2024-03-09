@@ -1,12 +1,11 @@
 from typing import Optional, Set
 
-
-if __name__ == "__main__":
-    main()
-
 def main():
     solution = Solution()
     solution.hasCycle(None)
+
+if __name__ == "__main__":
+    main()
 
 class ListNode:
     def __init__(self, x) -> None:
