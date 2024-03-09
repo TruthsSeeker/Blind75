@@ -1,3 +1,5 @@
+use std::collections::VecDeque;
+
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
   pub val: i32,
@@ -71,6 +73,23 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     }
 
     new_head
+}
+
+pub fn merge_k_list_dac(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
+    let mut lists = VecDeque::from(lists);
+    while lists.len() > 1 {
+        let mut merged_lists = VecDeque::new();
+        while let (Some(l1), l2_opt) = (lists.pop_front(), lists.pop_front()) {
+            let l2 = match l2_opt {
+                Some(l2) => l2,
+                None => None,
+            };
+            merged_lists.push_back(merge_two_lists(l1, l2))
+        } 
+        lists = merged_lists;
+    }
+    
+    lists.pop_front()?
 }
 
 #[cfg(test)]
@@ -160,5 +179,90 @@ mod tests {
             })),
         }));
         assert_eq!(merge_k_lists(input), expected);
+    }
+
+    #[test]
+    fn test_dac_1() {
+        // [[1,4,5],[1,3,4],[2,6]]
+        let input = vec![
+            Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 4,
+                    next: Some(Box::new(ListNode {
+                        val: 5,
+                        next: None,
+                    })),
+                })),
+            })),
+            Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 3,
+                    next: Some(Box::new(ListNode {
+                        val: 4,
+                        next: None,
+                    })),
+                })),
+            })),
+            Some(Box::new(ListNode {
+                val: 2,
+                next: Some(Box::new(ListNode {
+                    val: 6,
+                    next: None,
+                })),
+            })),
+        ];
+        // [1,1,2,3,4,4,5,6]
+        let expected = Some(Box::new(ListNode {
+            val: 1,
+            next: Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 2,
+                    next: Some(Box::new(ListNode {
+                        val: 3,
+                        next: Some(Box::new(ListNode {
+                            val: 4,
+                            next: Some(Box::new(ListNode {
+                                val: 4,
+                                next: Some(Box::new(ListNode {
+                                    val: 5,
+                                    next: Some(Box::new(ListNode {
+                                        val: 6,
+                                        next: None,
+                                    })),
+                                })),
+                            })),
+                        })),
+                    })),
+                })),
+            })),
+        }));
+        assert_eq!(merge_k_list_dac(input), expected);
+    }
+
+    #[test]
+    fn test_dac_2() {
+        // [[1], [0]]
+        let input = vec![
+            Some(Box::new(ListNode {
+                val: 1,
+                next: None,
+            })),
+            Some(Box::new(ListNode {
+                val: 0,
+                next: None,
+            })),
+        ];
+        // [0,1]
+        let expected = Some(Box::new(ListNode {
+            val: 0,
+            next: Some(Box::new(ListNode {
+                val: 1,
+                next: None,
+            })),
+        }));
+        assert_eq!(merge_k_list_dac(input), expected);
     }
 }
