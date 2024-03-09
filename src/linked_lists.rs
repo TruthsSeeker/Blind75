@@ -1,2 +1,2 @@
 pub mod reverse;
-pub mod merge_two_lists;
+pub mod merge_linked_lists;
