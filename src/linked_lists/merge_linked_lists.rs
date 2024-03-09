@@ -1,5 +1,3 @@
-use std::collections::VecDeque;
-
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
   pub val: i32,
@@ -76,20 +74,20 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
 }
 
 pub fn merge_k_list_dac(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
-    let mut lists = VecDeque::from(lists);
+    let mut lists = Vec::from(lists);
     while lists.len() > 1 {
-        let mut merged_lists = VecDeque::new();
-        while let (Some(l1), l2_opt) = (lists.pop_front(), lists.pop_front()) {
+        let mut merged_lists = Vec::new();
+        while let (Some(l1), l2_opt) = (lists.pop(), lists.pop()) {
             let l2 = match l2_opt {
                 Some(l2) => l2,
                 None => None,
             };
-            merged_lists.push_back(merge_two_lists(l1, l2))
+            merged_lists.push(merge_two_lists(l1, l2))
         } 
         lists = merged_lists;
     }
     
-    lists.pop_front()?
+    lists.pop()?
 }
 
 #[cfg(test)]
