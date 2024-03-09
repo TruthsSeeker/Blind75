@@ -1,6 +1,7 @@
 pub mod reverse;
 pub mod merge_linked_lists;
 pub mod remove_nth;
+pub mod reorder_list;
 
 
 // Definition for singly-linked list.
