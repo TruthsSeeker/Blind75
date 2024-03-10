@@ -14,9 +14,6 @@ pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
         }
     }
 
-    println!("{:?}", matrix);
-    println!("{:?}", top_column);
-
     for i in 1..matrix[0].len() {
         if matrix[0][i] == 0 {
             for j in 0..matrix.len() {
