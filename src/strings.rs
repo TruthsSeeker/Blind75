@@ -5,3 +5,4 @@ pub mod anagram;
 pub mod group_anagrams;
 pub mod valid_parentheses;
 pub mod valid_palindrome;
+pub mod longest_palidrome;
