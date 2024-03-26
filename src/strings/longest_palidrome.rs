@@ -1,7 +1,7 @@
 pub fn longest_palindrome(s: String) -> String {
     let mut res = "";
     let mut res_len = 0;
-    let mut chars: Vec<char> = s.chars().collect();
+    let chars: Vec<char> = s.chars().collect();
     for i in 0..chars.len()  {
         
         let (mut l, mut r) = (i, i);
@@ -16,7 +16,7 @@ pub fn longest_palindrome(s: String) -> String {
         }
         
         (l, r) = (i, i+1);
-        while l >= 0 && r < s.len() && chars[l] == chars[r] {
+        while r < s.len() && chars[l] == chars[r] {
             if (r - l + 1) > res_len {
                 res = &s[l..=r];
                 res_len = r - l + 1;
