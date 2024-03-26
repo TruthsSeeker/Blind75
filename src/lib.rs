@@ -6,3 +6,4 @@ pub mod intervals;
 pub mod linked_lists;
 pub mod matrices;
 pub mod strings;
+pub mod trees;
