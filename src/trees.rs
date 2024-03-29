@@ -1,5 +1,6 @@
 pub mod max_depth;
 pub mod same;
+pub mod invert_tree;
 
 use std::{cell::RefCell, rc::Rc};
 
