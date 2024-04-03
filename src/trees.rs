@@ -1,6 +1,7 @@
 pub mod max_depth;
 pub mod same;
 pub mod invert_tree;
+pub mod max_path_sum;
 
 use std::{cell::RefCell, rc::Rc};
 
