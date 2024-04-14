@@ -3,6 +3,7 @@ pub mod same;
 pub mod invert_tree;
 pub mod max_path_sum;
 pub mod level_order;
+pub mod serde_tree;
 
 use std::{cell::RefCell, rc::Rc};
 
