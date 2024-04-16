@@ -5,6 +5,7 @@ pub mod max_path_sum;
 pub mod level_order;
 pub mod serde_tree;
 pub mod subtree;
+pub mod build_inorder_preorder;
 
 use std::{cell::RefCell, rc::Rc};
 
