@@ -6,6 +6,7 @@ pub mod level_order;
 pub mod serde_tree;
 pub mod subtree;
 pub mod build_inorder_preorder;
+pub mod validate_binary_tree;
 
 use std::{cell::RefCell, rc::Rc};
 
