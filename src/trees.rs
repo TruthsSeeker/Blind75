@@ -7,6 +7,7 @@ pub mod serde_tree;
 pub mod subtree;
 pub mod build_inorder_preorder;
 pub mod validate_binary_tree;
+pub mod bst_k_smallest;
 
 use std::{cell::RefCell, rc::Rc};
 
