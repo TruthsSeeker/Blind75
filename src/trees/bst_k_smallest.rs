@@ -13,7 +13,7 @@ fn inorder_dfs(root: Option<Rc<RefCell<TreeNode>>>, k: i32, n: i32) -> (i32, i32
         return (n, -1);
     };
     
-    let (mut n, mut val) = inorder_dfs(root.borrow().left.clone(), k, n);
+    let (mut n, val) = inorder_dfs(root.borrow().left.clone(), k, n);
     
     if val != -1 {
         return (k, val); 
@@ -24,9 +24,7 @@ fn inorder_dfs(root: Option<Rc<RefCell<TreeNode>>>, k: i32, n: i32) -> (i32, i32
         return (n, root.borrow().val);
     }
 
-    (n, val) = inorder_dfs(root.borrow().right.clone(), k, n);
-
-    (n, val)
+    return inorder_dfs(root.borrow().right.clone(), k, n);
 }
 
 #[cfg(test)]
